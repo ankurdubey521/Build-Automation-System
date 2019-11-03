@@ -21,7 +21,8 @@
 
 import json
 import os
-from typing import List
+from typing import Dict, List
+
 from Builder.global_constants import GlobalConstants
 
 
@@ -54,17 +55,22 @@ class BuildRule:
 
 class BuildConfig:
     """Parses and Stores build.config in the form of BuildRule objects"""
+
+    CACHED_JSONS_BY_CONTAINING_FOLDER_PATH = {}
+
     @classmethod
     def load_from_build_directory(cls, json_containing_directory: str):
         # Parse JSON
+        if json_containing_directory in BuildConfig.CACHED_JSONS_BY_CONTAINING_FOLDER_PATH:
+            return cls(BuildConfig.CACHED_JSONS_BY_CONTAINING_FOLDER_PATH[json_containing_directory])
         json_path = os.path.join(json_containing_directory, GlobalConstants.CONFIG_FILE_NAME)
         with open(json_path) as file_handle:
-            raw_json_str = file_handle.read()
-        return cls(raw_json_str)
+            raw_json = json.load(file_handle)
+        BuildConfig.CACHED_JSONS_BY_CONTAINING_FOLDER_PATH[json_containing_directory] = raw_json
+        return cls(raw_json)
 
-    def __init__(self, raw_json_str: str) -> None:
+    def __init__(self, raw_json: Dict[str, str]) -> None:
         # Parse JSON
-        raw_json = json.loads(raw_json_str)
         self._name_to_build_rule = {}
         for raw_build_rule in raw_json:
             name = raw_build_rule.get('name')
