@@ -6,9 +6,9 @@ import time
 import unittest
 from pathlib import Path
 
-from Builder.global_constants import GlobalConstants
-from Builder.lib.default_logger import DefaultLogger
-from Builder.lib.parallel_builder import ParallelBuilder
+from global_constants import GlobalConstants
+from lib.default_logger import DefaultLogger
+from lib.parallel_builder import ParallelBuilder
 
 MAX_THREAD_COUNT = 12
 

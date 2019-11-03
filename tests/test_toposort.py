@@ -1,6 +1,6 @@
 import unittest
 
-from Builder.lib.algorithms import TopologicalSort
+from lib.algorithms import TopologicalSort
 
 
 class TestTopologicalSort(unittest.TestCase):

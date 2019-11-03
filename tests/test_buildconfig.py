@@ -1,6 +1,6 @@
 import unittest
 
-from Builder.lib.buildconfig import BuildConfig
+from lib.buildconfig import BuildConfig
 
 
 class TestJsonParser(unittest.TestCase):

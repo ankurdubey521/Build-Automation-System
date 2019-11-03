@@ -14,9 +14,9 @@ from concurrent.futures import Future, ThreadPoolExecutor
 from queue import Queue
 from typing import Dict, List
 
-from Builder.lib.algorithms import TopologicalSort
-from Builder.lib.buildconfig import BuildConfig
-from Builder.lib.file_watcher import FileWatcher
+from lib.algorithms import TopologicalSort
+from lib.buildconfig import BuildConfig
+from lib.file_watcher import FileWatcher
 
 
 class ParallelBuilder:

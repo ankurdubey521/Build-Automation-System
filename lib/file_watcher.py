@@ -3,7 +3,7 @@ from os import stat
 from time import sleep
 from typing import Callable, Dict, List
 
-from Builder.global_constants import GlobalConstants
+from global_constants import GlobalConstants
 
 
 class FileWatcher:

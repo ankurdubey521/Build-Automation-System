@@ -23,7 +23,7 @@ import json
 import os
 from typing import Dict, List
 
-from Builder.global_constants import GlobalConstants
+from global_constants import GlobalConstants
 
 
 class BuildRule:
