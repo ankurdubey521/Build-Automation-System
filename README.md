@@ -1,5 +1,5 @@
 # Build Automation Tool
-[![Build Status](https://travis-ci.org/ankurdubey521/Build-Automation-System.png?branch=master)](https://travis-ci.org/ankurdubey521/Build-Automation-System)
+[![Build Status](https://travis-ci.com/ankurdubey521/Build-Automation-System.png?branch=master)](https://travis-ci.com/ankurdubey521/Build-Automation-System)
 
 Usage:
 ```
